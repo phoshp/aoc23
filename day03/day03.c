@@ -18,7 +18,7 @@ struct symbol {
   char sym;
 };
 
-int main(int argc, char **argv) {
+int main(void) {
   FILE *file = fopen("../data.txt", "r");
   if (file == NULL) {
     printf("where is the fcking data\n");
