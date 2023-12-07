@@ -23,7 +23,7 @@ pub fn common(partB: bool, alloc: std.mem.Allocator) !u32 {
         var list = std.ArrayList(u8).init(alloc);
         defer list.deinit();
 
-        if (partB) {
+        if (partB) { // naaaaasty hack
             _ = std.mem.replace(u8, line, "one", "o1e", line);
             _ = std.mem.replace(u8, line, "two", "t2o", line);
             _ = std.mem.replace(u8, line, "three", "t3e", line);

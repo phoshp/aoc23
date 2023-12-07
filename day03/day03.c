@@ -19,7 +19,7 @@ struct symbol {
 };
 
 int main(void) {
-  FILE *file = fopen("../data.txt", "r");
+  FILE *file = fopen("../data.txt", "r"); // assumes binary file is in the build dir
   if (file == NULL) {
     printf("where is the fcking data\n");
     return 1;
