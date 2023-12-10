@@ -42,16 +42,15 @@ fn main() {
                             if n.start >= r.0.start && n.end <= r.0.end {
                                 pass = true;
                             }
-                            let mut i = n.start.max(r.0.start);
-                            let mut j = n.end.min(r.0.end);
+                            let i = n.start.max(r.0.start);
+                            let j = n.end.min(r.0.end);
                             ate.push(i..j);
 
                             let nextr = (i + r.1)..(j + r.1);
                             if it.len() == 0 {
                                 loc.push(nextr);
                             } else {
-                                let peek = it.peek().unwrap().name;
-                                remain.push((peek, nextr));
+                                remain.push((it.peek().unwrap().name, nextr));
                             }
                         }
                     }
@@ -66,10 +65,12 @@ fn main() {
                             j.start = o.end.min(j.start);
                             j.end = o.start.max(j.end);
                         }
-                        if it.len() > 0 {
-                            remain.push((it.peek().unwrap().name, j));
-                        } else {
-                            loc.push(j);
+                        if j.start < j.end {
+                            if it.len() > 0 {
+                                remain.push((it.peek().unwrap().name, j));
+                            } else {
+                                loc.push(j);
+                            }
                         }
                     }
                 }
@@ -78,7 +79,7 @@ fn main() {
     }
     let min2 = loc
         .iter()
-        .map(|x| x.clone().min().unwrap_or(i64::MAX))
+        .map(|x| x.clone().min().unwrap())
         .min()
         .expect("MISSION IMPOSSIBLE!");
 
