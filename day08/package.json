@@ -1,0 +1,17 @@
+{
+  "name": "day08",
+  "version": "1.0.0",
+  "description": "day 8 with ts",
+  "main": "index.js",
+  "keywords": [
+    "aoc23"
+  ],
+  "author": "phoshp",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@types/node": "^20.10.4"
+  }
+}
