@@ -1,0 +1,12 @@
+{
+  "name": "day07",
+  "version": "1.0.0",
+  "description": "aoc23 day 7",
+  "main": "index.js",
+  "type": "module",
+  "keywords": [
+    "aoc23"
+  ],
+  "author": "phoshp",
+  "license": "MIT"
+}
