@@ -1,11 +1,9 @@
 #include <ctype.h>
-#include <memory.h>
-#include <printf.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
-void vec_push(void **ptr, void *value, size_t size) {
+void vector_push(int **ptr, void *value, size_t size) {
   if (*ptr == NULL) {
     int *data = malloc(2 * (sizeof(int) + size));
     if (data == NULL) {
@@ -18,7 +16,7 @@ void vec_push(void **ptr, void *value, size_t size) {
     memcpy(data + 2, value, size);
     *ptr = data + 2;
   } else {
-    int *data = (int *)*ptr - 2;
+    int *data = *ptr - 2;
     int len = data[0];
     int cap = data[1];
 
@@ -33,16 +31,16 @@ void vec_push(void **ptr, void *value, size_t size) {
   }
 }
 
-int vec_len(int *ptr) {
+int vector_len(int *ptr) {
   int *data = ptr - 2;
   return data[0];
 }
 
-void vec_free(int *ptr) { free(ptr - 2); }
+void vector_free(int *ptr) { free(ptr - 2); }
 
-#define vec_push(ptr, x) vec_push((void **)&ptr, (void *)&x, sizeof(x))
-#define vec_len(x) vec_len((int *)x)
-#define vec_free(x) vec_free((int *)x)
+#define vec_push(ptr, x) vector_push((int **)&ptr, (void *)&x, sizeof(x))
+#define vec_len(x) vector_len((int *)x)
+#define vec_free(x) vector_free((int *)x)
 
 struct part {
   int start;
