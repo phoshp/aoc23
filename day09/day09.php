@@ -7,10 +7,8 @@ $partB = 0;
 foreach ($lines as $line) {
     $hir = [array_map(fn ($val) => intval($val), explode(" ", $line))];
     $curr = $hir[0];
-    $i = 0;
 
     while (true) {
-        $i++;
         $prev = null;
         $prevd = null;
         $changed = false;
