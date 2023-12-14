@@ -4,13 +4,10 @@ record = int("".join(file.readline().split()[1:]))
 
 ways = 0
 for speed in range(time):
-    left = time - speed
-    d = left * speed
+    d = (time - speed) * speed
     if d > record:
-        a = time - speed
-        ways = (a - speed + 1)
+        ways = time - 2 * speed + 1
         break
-
 file.close()
 
 print("Part B: ", ways)

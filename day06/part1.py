@@ -14,7 +14,6 @@ for n, time in enumerate(times):
         if d > record:
             ways += 1
     score *= ways
-
 file.close()
 
 print("Part A: ", score)

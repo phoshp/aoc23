@@ -102,7 +102,6 @@ let parseHands = function(joker) {
                 break;
         }
 
-        // console.log(original_cards)
         return new Hand(type, type_rank, bid, original_cards);
     })
 };
