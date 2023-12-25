@@ -7,7 +7,7 @@ def hash(text: str):
 
 with open("data.txt") as f:
     seq = f.read().replace("\n", "").split(",")
-    print("Part 1:", sum(map(lambda x: hash(x), seq)))
+    print("Part 1:", sum(map(hash, seq)))
 
     boxes = {}
     for ins in seq:
